@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "_source": {"enabled": true},
+    "properties": {
+      "id": {"type": "long","store": true},
+      "location_id": {"type": "long","store": true},
+      "locationPath": {"type": "text", "analyzer": "ik_smart"},
+      "name": {"type": "text", "analyzer": "ik_max_word","store": true},
+      "nameEn": {"type": "text","store": true},
+      "areas": {"type": "text", "analyzer": "ik_smart","store": true},
+      "address": {"type": "text", "analyzer": "ik_smart"},
+      "lat": {"type": "double"},
+      "lng": {"type": "double"},
+      "images": {"type": "keyword", "index": false},
+      "summary": {"type": "keyword", "index": false},
+      "phone": {"type": "keyword", "index": false},
+      "website": {"type": "keyword", "index": false},
+      "duration": {"type": "text", "analyzer": "ik_smart"},
+      "traffic": {"type": "text", "index": false},
+      "ticket": {"type": "text", "index": false},
+      "open": {"type": "text", "index": false},
+      "create_time": {"type": "date", "format": "yyyy-MM-dd HH:mm:ss","index": false},
+      "update_time": {"type": "date", "format": "yyyy-MM-dd HH:mm:ss","index": false}
+    }
+
+  },
+  "aliases": {
+    "location_v1": {}
+  }
+}
