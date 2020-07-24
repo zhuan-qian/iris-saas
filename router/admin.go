@@ -4,8 +4,8 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
-	"scaffold/app/controllers/admins"
-	"scaffold/app/middleware"
+	"gold_hill/scaffold/app/controllers/admins"
+	"gold_hill/scaffold/app/middleware"
 )
 
 func AdminRouter(app *iris.Application) {

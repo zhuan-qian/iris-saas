@@ -10,11 +10,11 @@ import (
 	"github.com/kataras/iris/v12/middleware/logger"
 	"github.com/kataras/iris/v12/middleware/recover"
 	"os"
-	"scaffold/app/commands/crons"
-	"scaffold/common"
-	"scaffold/config"
-	"scaffold/config/resource"
-	"scaffold/router"
+	"gold_hill/scaffold/app/commands/crons"
+	"gold_hill/scaffold/common"
+	"gold_hill/scaffold/config"
+	"gold_hill/scaffold/config/resource"
+	"gold_hill/scaffold/router"
 	"time"
 )
 

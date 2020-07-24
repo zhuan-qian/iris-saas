@@ -1,8 +1,8 @@
 package service
 
 import (
-	"scaffold/dao"
-	"scaffold/model"
+	"gold_hill/scaffold/dao"
+	"gold_hill/scaffold/model"
 )
 
 type Locations struct {

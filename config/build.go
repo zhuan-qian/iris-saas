@@ -1,10 +1,10 @@
 package config
 
 import (
-	"scaffold/common"
-	"scaffold/config/database"
-	"scaffold/config/directory"
-	"scaffold/service/payment"
+	"gold_hill/scaffold/common"
+	"gold_hill/scaffold/config/database"
+	"gold_hill/scaffold/config/directory"
+	"gold_hill/scaffold/service/payment"
 )
 
 func Build() {

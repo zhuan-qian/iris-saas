@@ -2,7 +2,7 @@ package directory
 
 import (
 	"os"
-	"scaffold/common"
+	"gold_hill/scaffold/common"
 )
 
 func InitDirectory ()error{

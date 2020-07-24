@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"scaffold/common"
-	"scaffold/model"
+	"gold_hill/scaffold/common"
+	"gold_hill/scaffold/model"
 	"strconv"
 	"strings"
 )

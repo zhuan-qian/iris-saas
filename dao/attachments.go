@@ -1,7 +1,7 @@
 package dao
 
 import (
-	"scaffold/model"
+	"gold_hill/scaffold/model"
 	"xorm.io/xorm"
 )
 

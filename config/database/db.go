@@ -1,10 +1,10 @@
 package database
 
 import (
-	"scaffold/common"
-	"scaffold/dao"
-	"scaffold/model"
-	"scaffold/service"
+	"gold_hill/scaffold/common"
+	"gold_hill/scaffold/dao"
+	"gold_hill/scaffold/model"
+	"gold_hill/scaffold/service"
 	"strconv"
 )
 

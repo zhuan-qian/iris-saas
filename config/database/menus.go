@@ -1,8 +1,8 @@
 package database
 
 import (
-	"scaffold/dao"
-	"scaffold/model"
+	"gold_hill/scaffold/dao"
+	"gold_hill/scaffold/model"
 	"strings"
 )
 

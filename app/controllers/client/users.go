@@ -1,11 +1,11 @@
 package client
 
 import (
-	"scaffold/app/controllers"
-	"scaffold/app/controllers/params"
-	"scaffold/dao"
-	"scaffold/model"
-	"scaffold/service"
+	"gold_hill/scaffold/app/controllers"
+	"gold_hill/scaffold/app/controllers/params"
+	"gold_hill/scaffold/dao"
+	"gold_hill/scaffold/model"
+	"gold_hill/scaffold/service"
 )
 
 type Users struct {

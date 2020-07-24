@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/olivere/elastic/v7"
-	"scaffold/dao"
-	"scaffold/model"
+	"gold_hill/scaffold/dao"
+	"gold_hill/scaffold/model"
 	"reflect"
 )
 

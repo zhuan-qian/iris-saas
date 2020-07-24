@@ -1,11 +1,11 @@
 package admins
 
 import (
-	"scaffold/app/controllers"
-	"scaffold/app/controllers/params"
-	"scaffold/common"
-	"scaffold/model"
-	"scaffold/service"
+	"gold_hill/scaffold/app/controllers"
+	"gold_hill/scaffold/app/controllers/params"
+	"gold_hill/scaffold/common"
+	"gold_hill/scaffold/model"
+	"gold_hill/scaffold/service"
 )
 
 type Roles struct {

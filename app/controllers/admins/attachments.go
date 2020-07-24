@@ -1,8 +1,8 @@
 package admins
 
 import (
-	"scaffold/app/controllers"
-	"scaffold/service"
+	"gold_hill/scaffold/app/controllers"
+	"gold_hill/scaffold/service"
 )
 
 type Attachments struct {

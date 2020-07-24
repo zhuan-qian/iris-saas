@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 	"io/ioutil"
-	"scaffold/common"
-	"scaffold/service/es"
+	"gold_hill/scaffold/common"
+	"gold_hill/scaffold/service/es"
 	"strings"
 )
 

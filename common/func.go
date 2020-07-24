@@ -12,7 +12,7 @@ import (
 	"math/rand"
 	"mime/multipart"
 	"os"
-	"scaffold/model"
+	"gold_hill/scaffold/model"
 	"reflect"
 	"strconv"
 	"strings"

@@ -1,7 +1,7 @@
 package client
 
 import (
-	"scaffold/app/controllers"
+	"gold_hill/scaffold/app/controllers"
 )
 
 type AlipaySync struct {

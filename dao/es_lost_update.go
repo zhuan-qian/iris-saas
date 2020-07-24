@@ -2,8 +2,8 @@ package dao
 
 import (
 	"fmt"
-	"scaffold/model"
-	"scaffold/service/cache"
+	"gold_hill/scaffold/model"
+	"gold_hill/scaffold/service/cache"
 	"strings"
 	"time"
 	"xorm.io/xorm"
