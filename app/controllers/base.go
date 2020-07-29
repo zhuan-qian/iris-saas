@@ -5,7 +5,7 @@ import (
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/sessions"
 	"net/http"
-	"gold_hill/scaffold/common"
+	"gold_hill/mine/common"
 )
 
 type Base struct {

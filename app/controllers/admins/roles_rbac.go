@@ -3,11 +3,11 @@ package admins
 import (
 	"encoding/json"
 	"errors"
-	"gold_hill/scaffold/app/controllers"
-	"gold_hill/scaffold/app/controllers/params"
-	"gold_hill/scaffold/dao"
-	"gold_hill/scaffold/model"
-	"gold_hill/scaffold/service"
+	"gold_hill/mine/app/controllers"
+	"gold_hill/mine/app/controllers/params"
+	"gold_hill/mine/dao"
+	"gold_hill/mine/model"
+	"gold_hill/mine/service"
 )
 
 type RolesRbac struct {

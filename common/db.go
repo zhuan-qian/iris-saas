@@ -50,7 +50,7 @@ func GetCasbin() *casbin.Enforcer {
 		if err != nil {
 			panic(err)
 		}
-		instanceCasbin, err = casbin.NewEnforcer("config/rbac/model.conf", adapter)
+		instanceCasbin, err = casbin.NewEnforcer("config/rbac_model.conf", adapter)
 		if err != nil {
 			panic(err)
 		}

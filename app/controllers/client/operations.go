@@ -1,8 +1,8 @@
 package client
 
 import (
-	"gold_hill/scaffold/app/controllers"
-	"gold_hill/scaffold/dao"
+	"gold_hill/mine/app/controllers"
+	"gold_hill/mine/dao"
 )
 
 type Operations struct {

@@ -7,9 +7,9 @@ import (
 	"github.com/kataras/iris/v12"
 	"net/http"
 	"os"
-	"gold_hill/scaffold/common"
-	"gold_hill/scaffold/model"
-	"gold_hill/scaffold/service"
+	"gold_hill/mine/common"
+	"gold_hill/mine/model"
+	"gold_hill/mine/service"
 )
 
 //用户token校验中间件

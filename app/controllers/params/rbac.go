@@ -1,6 +1,6 @@
 package params
 
-import "gold_hill/scaffold/model"
+import "gold_hill/mine/model"
 
 type RbacGet struct {
 	MenuPath *string `json:"menuPath" validate:"omitempty,len=8"`

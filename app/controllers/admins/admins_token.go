@@ -3,10 +3,10 @@ package admins
 import (
 	"github.com/dgrijalva/jwt-go"
 	"os"
-	"gold_hill/scaffold/app/controllers"
-	"gold_hill/scaffold/common"
-	"gold_hill/scaffold/model"
-	"gold_hill/scaffold/service"
+	"gold_hill/mine/app/controllers"
+	"gold_hill/mine/common"
+	"gold_hill/mine/model"
+	"gold_hill/mine/service"
 	"strings"
 )
 

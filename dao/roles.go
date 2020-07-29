@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"gold_hill/scaffold/common"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/common"
+	"gold_hill/mine/model"
 	"strconv"
 	"xorm.io/builder"
 	"xorm.io/xorm"

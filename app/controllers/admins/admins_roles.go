@@ -2,9 +2,9 @@ package admins
 
 import (
 	"errors"
-	"gold_hill/scaffold/app/controllers"
-	"gold_hill/scaffold/model"
-	"gold_hill/scaffold/service"
+	"gold_hill/mine/app/controllers"
+	"gold_hill/mine/model"
+	"gold_hill/mine/service"
 	"strings"
 )
 

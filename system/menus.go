@@ -1,8 +1,8 @@
-package database
+package system
 
 import (
-	"gold_hill/scaffold/dao"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/dao"
+	"gold_hill/mine/model"
 	"strings"
 )
 
@@ -22,7 +22,6 @@ func MenusBuild() error {
 func Background() error {
 	var (
 		bmenus = BackgroundMenus()
-		omenus = OrganizationMenus()
 		err    error
 	)
 
@@ -30,7 +29,6 @@ func Background() error {
 	if err != nil {
 		return err
 	}
-	err = MenusHandle(omenus, model.MENU_GENRE_IS_ORGANIZATION)
 	return err
 }
 
@@ -394,221 +392,6 @@ func BackgroundMenus() []*model.Menus {
 							Description: "权限列表",
 						},
 					},
-				},
-			},
-		},
-		{
-			Title:       "财务管理",
-			Path:        "06000000",
-			Route:       "/finance",
-			Icon:        "money",
-			Description: "平台所有财务统一管理",
-			Genre:       model.MENU_GENRE_IS_BACKEND,
-			Sort:        0,
-			Status:      1,
-			Hidden:      0,
-			Subs: []*model.Menus{
-				{
-					Title:       "流水统计",
-					Path:        "06010000",
-					Route:       "list",
-					Icon:        "",
-					Description: "平台所有进出账流水统计",
-					Genre:       model.MENU_GENRE_IS_BACKEND,
-					Sort:        0,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-			},
-		},
-	}
-}
-
-func OrganizationMenus() []*model.Menus {
-	return []*model.Menus{
-		{
-			Title:       "首页管理",
-			Path:        "01000000",
-			Route:       "/",
-			Icon:        "dashboard",
-			Description: "平台所有数据统计管理",
-			Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-			Sort:        0,
-			Status:      1,
-			Hidden:      0,
-			Subs: []*model.Menus{
-				{
-					Title:       "首页",
-					Path:        "01010000",
-					Route:       "dashboard",
-					Icon:        "",
-					Description: "平台所有数据统计",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        0,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-			},
-		},
-		{
-			Title:       "学生管理",
-			Path:        "02000000",
-			Route:       "/user",
-			Icon:        "peoples",
-			Description: "对本校所有学生进行管理",
-			Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-			Sort:        0,
-			Status:      1,
-			Hidden:      0,
-			Subs: []*model.Menus{
-				{
-					Title:       "学生",
-					Path:        "02010000",
-					Route:       "list",
-					Icon:        "",
-					Description: "对本校所有学生的信息查看以及创建",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        0,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-			},
-		},
-		{
-			Title:       "商品管理",
-			Path:        "03000000",
-			Route:       "/goods",
-			Icon:        "shopping",
-			Description: "对本校销售商品统一管理",
-			Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-			Sort:        0,
-			Status:      1,
-			Hidden:      0,
-			Subs: []*model.Menus{
-				{
-					Title:       "商品",
-					Path:        "03010000",
-					Route:       "list",
-					Icon:        "",
-					Description: "管理本校所有商品",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        1,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-				{
-					Title:       "子商品",
-					Path:        "03020000",
-					Route:       "subList",
-					Icon:        "",
-					Description: "管理本校所有子商品",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        1,
-					Status:      1,
-					Hidden:      1,
-					Subs:        nil,
-				},
-				{
-					Title:       "创建商品",
-					Path:        "03030000",
-					Route:       "create",
-					Icon:        "",
-					Description: "对商品的创建",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        1,
-					Status:      1,
-					Hidden:      1,
-					Subs:        nil,
-				},
-				{
-					Title:       "编辑商品",
-					Path:        "03040000",
-					Route:       "edit",
-					Icon:        "",
-					Description: "对商品的编辑",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        1,
-					Status:      1,
-					Hidden:      1,
-					Subs:        nil,
-				},
-			},
-		},
-		{
-			Title:       "运营管理",
-			Path:        "04000000",
-			Route:       "/operation",
-			Icon:        "chart",
-			Description: "管理运营相关操作",
-			Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-			Sort:        0,
-			Status:      1,
-			Hidden:      0,
-			Subs: []*model.Menus{
-				{
-					Title:       "员工",
-					Path:        "04010000",
-					Route:       "user",
-					Icon:        "",
-					Description: "允许登录后台的员工",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        0,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-				{
-					Title:       "角色",
-					Path:        "04020000",
-					Route:       "role",
-					Icon:        "",
-					Description: "对员工职能赋能管理",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        1,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-				{
-					Title:       "权限",
-					Path:        "04030000",
-					Route:       "resource",
-					Icon:        "",
-					Description: "后台可用资源列表与描述",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        2,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
-				},
-			},
-		},
-		{
-			Title:       "财务管理",
-			Path:        "05000000",
-			Route:       "/finance",
-			Icon:        "money",
-			Description: "本校进出账财务查看与管理",
-			Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-			Sort:        0,
-			Status:      1,
-			Hidden:      0,
-			Subs: []*model.Menus{
-				{
-					Title:       "流水统计",
-					Path:        "05010000",
-					Route:       "list",
-					Icon:        "",
-					Description: "本校所有进出账流水统计",
-					Genre:       model.MENU_GENRE_IS_ORGANIZATION,
-					Sort:        0,
-					Status:      1,
-					Hidden:      0,
-					Subs:        nil,
 				},
 			},
 		},

@@ -5,8 +5,8 @@ import (
 	"errors"
 	"github.com/denverdino/aliyungo/sms"
 	"os"
-	"gold_hill/scaffold/common"
-	"gold_hill/scaffold/service/cache"
+	"gold_hill/mine/common"
+	"gold_hill/mine/service/cache"
 	"strconv"
 	"time"
 )

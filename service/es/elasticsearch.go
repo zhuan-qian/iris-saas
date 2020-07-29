@@ -6,7 +6,7 @@ import (
 	"github.com/olivere/elastic/v7"
 	"log"
 	"os"
-	"gold_hill/scaffold/common"
+	"gold_hill/mine/common"
 	"sync"
 	"time"
 )

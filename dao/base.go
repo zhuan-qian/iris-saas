@@ -3,7 +3,7 @@ package dao
 import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"gold_hill/scaffold/common"
+	"gold_hill/mine/common"
 	"xorm.io/xorm"
 )
 

@@ -1,9 +1,9 @@
 package service
 
 import (
-	"gold_hill/scaffold/common"
-	"gold_hill/scaffold/dao"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/common"
+	"gold_hill/mine/dao"
+	"gold_hill/mine/model"
 	"strings"
 )
 

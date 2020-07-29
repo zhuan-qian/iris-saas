@@ -5,9 +5,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 	_ "github.com/mattn/go-sqlite3"
-	"gold_hill/scaffold/common"
-	"gold_hill/scaffold/dao"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/common"
+	"gold_hill/mine/dao"
+	"gold_hill/mine/model"
 	"strconv"
 	"strings"
 	"xorm.io/core"
@@ -53,16 +53,6 @@ func (m *Street) TableName() string {
 	return "street"
 }
 
-type Village struct {
-	Name       string `json:"name" xorm:"not null comment('名称') VARCHAR(64)"`
-	Code       string `json:"code" xorm:"not null comment('城市代码') VARCHAR(16) index"`
-	StreetCode string `json:"streetCode" xorm:"not null comment('城市代码') VARCHAR(16) index"`
-}
-
-func (m *Village) TableName() string {
-	return "village"
-}
-
 func main() {
 	var (
 		provinces           []*Province
@@ -72,8 +62,6 @@ func main() {
 		areasMapByCity      = make(map[string][]*model.Locations)
 		streets             []*Street
 		streetsMapByArea    = make(map[string][]*model.Locations)
-		villages            []*Village
-		villagesMapByStreet = make(map[string][]*model.Locations)
 		cnLocations         []*model.Locations
 
 		locations    []*model.Locations
@@ -137,25 +125,6 @@ func main() {
 	engine.SQL("select code,name,provinceCode from city").Find(&cities)
 	engine.SQL("select code,name,cityCode from area").Find(&areas)
 	engine.SQL("select code,name,areaCode from street").Find(&streets)
-	engine.SQL("select code,name,streetCode from village").Find(&villages)
-
-	for _, v := range villages {
-		l := &model.Locations{
-			Path:       v.Code,
-			Level:      7,
-			Name:       v.Name,
-			NameEn:     "",
-			NamePinyin: "",
-			Code:       v.Code,
-			Subs:       nil,
-		}
-
-		if _, ok := villagesMapByStreet[v.StreetCode]; ok {
-			villagesMapByStreet[v.StreetCode] = append(villagesMapByStreet[v.StreetCode], l)
-		} else {
-			villagesMapByStreet[v.StreetCode] = []*model.Locations{l}
-		}
-	}
 
 	for _, v := range streets {
 		l := &model.Locations{
@@ -168,9 +137,6 @@ func main() {
 			Subs:       nil,
 		}
 
-		if _, ok := villagesMapByStreet[v.Code]; ok {
-			l.Subs = villagesMapByStreet[v.Code]
-		}
 		if _, ok := streetsMapByArea[v.AreaCode]; ok {
 			streetsMapByArea[v.AreaCode] = append(streetsMapByArea[v.AreaCode], l)
 		} else {

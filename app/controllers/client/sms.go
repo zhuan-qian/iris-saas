@@ -1,8 +1,8 @@
 package client
 
 import (
-	"gold_hill/scaffold/app/controllers"
-	"gold_hill/scaffold/service/sms"
+	"gold_hill/mine/app/controllers"
+	"gold_hill/mine/service/sms"
 )
 
 type Sms struct {

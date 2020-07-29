@@ -2,7 +2,7 @@ package dao
 
 import (
 	"fmt"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/model"
 	"xorm.io/xorm"
 )
 

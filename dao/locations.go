@@ -2,7 +2,7 @@ package dao
 
 import (
 	"errors"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/model"
 	"sort"
 	"strings"
 	"xorm.io/builder"

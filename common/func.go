@@ -12,7 +12,7 @@ import (
 	"math/rand"
 	"mime/multipart"
 	"os"
-	"gold_hill/scaffold/model"
+	"gold_hill/mine/model"
 	"reflect"
 	"strconv"
 	"strings"
@@ -150,7 +150,7 @@ func ReadFileToString(filePath string) (string, error) {
 }
 
 func ElasticSearchHost() string {
-	return fmt.Sprintf("http://%s:%s", os.Getenv("ES_HOST"), os.Getenv("ES_PORT"))
+	return "http://"+os.Getenv("ES_HOST")+":"+os.Getenv("ES_PORT")
 }
 
 func PathExists(path string) (bool, error) {
