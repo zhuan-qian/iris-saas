@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/Chain-Zhang/pinyin"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 	_ "github.com/mattn/go-sqlite3"
@@ -60,8 +61,6 @@ func main() {
 		citiesMapByProvince = make(map[string][]*model.Locations)
 		areas               []*Area
 		areasMapByCity      = make(map[string][]*model.Locations)
-		streets             []*Street
-		streetsMapByArea    = make(map[string][]*model.Locations)
 		cnLocations         []*model.Locations
 
 		locations    []*model.Locations
@@ -103,46 +102,23 @@ func main() {
 	//}
 
 	//TODO 移除中国除港澳台的所有地址信息
-	engine.Exec("delete from locations where path like ',1,7,%' and path not like ',1,7,' and path not like ',1,7,278,%' and path not like ',1,7,279,%' and path not like ',1,7,280%'")
-
-	sengine.Omit("id").Desc("path").Find(&locations)
+	_,err=sengine.Exec("delete from locations where path != ',1,7,' and path not like ',1,7,278,%' and path not like ',1,7,279,%' and path not like ',1,7,280%'")
+	if err!=nil{
+		panic(err.Error())
+	}
+	err=sengine.Omit("id","parent").Desc("path").Find(&locations)
+	if err!=nil{
+		panic(err.Error())
+	}
 	for i, v := range locations {
 		locations[i].Parent = v.Path[0 : strings.LastIndex(strings.Trim(v.Path, ","), ",")+2]
-		locations[i].Level = len(strings.Split(strings.Trim(v.Path, ","), ","))
+		locations[i].Level = int8(len(strings.Split(strings.Trim(v.Path, ","), ",")))
 		locationsMap[v.Path] = locations[i]
-	}
-
-	for _, v := range locations {
-		if _, ok := locationsMap[v.Parent]; ok {
-			locationsMap[v.Parent].Subs = append(locationsMap[v.Parent].Subs, locationsMap[v.Path])
-		}
-		if v.Level == 1 {
-			topLocations = append(topLocations, locationsMap[v.Path])
-		}
 	}
 
 	engine.SQL("select code,name from province").Find(&provinces)
 	engine.SQL("select code,name,provinceCode from city").Find(&cities)
 	engine.SQL("select code,name,cityCode from area").Find(&areas)
-	engine.SQL("select code,name,areaCode from street").Find(&streets)
-
-	for _, v := range streets {
-		l := &model.Locations{
-			Path:       v.Code,
-			Level:      6,
-			Name:       v.Name,
-			NameEn:     "",
-			NamePinyin: "",
-			Code:       v.Code,
-			Subs:       nil,
-		}
-
-		if _, ok := streetsMapByArea[v.AreaCode]; ok {
-			streetsMapByArea[v.AreaCode] = append(streetsMapByArea[v.AreaCode], l)
-		} else {
-			streetsMapByArea[v.AreaCode] = []*model.Locations{l}
-		}
-	}
 
 	for _, v := range areas {
 		l := &model.Locations{
@@ -153,10 +129,6 @@ func main() {
 			NamePinyin: "",
 			Code:       v.Code,
 			Subs:       nil,
-		}
-
-		if _, ok := streetsMapByArea[v.Code]; ok {
-			l.Subs = streetsMapByArea[v.Code]
 		}
 
 		if _, ok := areasMapByCity[v.CityCode]; ok {
@@ -206,42 +178,61 @@ func main() {
 		cnLocations = append(cnLocations, l)
 	}
 
-	locationsMap[",1,7,"].Subs = cnLocations
+	fmt.Println(locationsMap[",1,7,"])
+	locationsMap[",1,7,"].Subs = append(locationsMap[",1,7,"].Subs,cnLocations...)
 
-	engine.Exec("truncate table locations")
+	for _, v := range locations {
+		if _, ok := locationsMap[v.Parent]; ok {
+			locationsMap[v.Parent].Subs = append(locationsMap[v.Parent].Subs, locationsMap[v.Path])
+		}
+		if v.Level == 1 {
+			topLocations = append(topLocations, locationsMap[v.Path])
+		}
+	}
 
-	err = intoLocations(topLocations, 0, ",")
+	_,err=sengine.Exec("truncate table locations")
+	if err!=nil{
+		panic(err.Error())
+	}
+	err = intoLocations(locationsMap[",1,7,"].Subs, 0, ",")
 	if err != nil {
-		fmt.Println(err.Error())
+		panic(err.Error())
 	}
 
 	return
 
 HASERR:
-	fmt.Println(err.Error())
+	panic(err.Error())
 	return
 
 }
 
-func intoLocations(list []*model.Locations, parentLevel int, parentPath string) (err error) {
+func intoLocations(list []*model.Locations, parentLevel int8, parentPath string) (err error) {
 	level := parentLevel + 1
 	d := dao.NewLocationsDao().WithSession(nil)
 	for _, v := range list {
 		v.Level = level
+		if parentPath!=","{
+			v.Parent = parentPath
+		}else{
+			v.Parent = "0"
+		}
+		v.NamePinyin,err=pinyin.New(v.Name).Split("").Convert()
+		v.Initial= string(v.NamePinyin[0])
 		_, err = d.InsertOne(v)
 		if err != nil {
-			return err
+			panic(err.Error())
 		}
 		v.Path = parentPath + strconv.Itoa(v.Id) + ","
 		_, err = d.ModifyBy([]string{"path"}, int64(v.Id), v)
 		if err != nil {
-			return err
+			panic(err.Error())
 		}
 		if v.Subs != nil {
 			err = intoLocations(v.Subs, level, v.Path)
 		}
 		if err != nil {
-			return err
+			panic(err.Error())
 		}
 	}
 	return nil

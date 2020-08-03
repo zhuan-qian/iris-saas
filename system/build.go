@@ -10,7 +10,6 @@ import (
 	"gold_hill/mine/common"
 	"gold_hill/mine/router"
 	"gold_hill/mine/service/log"
-	"gold_hill/mine/service/payment"
 	"gold_hill/mine/system/database"
 	"gold_hill/mine/system/directory"
 	"gold_hill/mine/system/resource"
@@ -35,7 +34,7 @@ func BaseBuild() {
 
 	//rbac基础数据表构建
 	common.GetCasbin()
-	payment.GetAliPayHandle()
+	//payment.GetAliPayHandle()
 	//payment.GetWxPayHandle()
 
 	//数据初始化

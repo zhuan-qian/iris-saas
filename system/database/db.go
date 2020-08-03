@@ -73,17 +73,17 @@ func BuildDBData() error {
 		})
 
 	//城市地址库创建
-	//if !systemDao.LocationsBuilt() {
-	//	sqlStr, err := common.ReadFileToString("toolkit/sql/locations.sql")
-	//	if err != nil {
-	//		return err
-	//	}
-	//	_, err = common.GetDB().Exec(sqlStr)
-	//	if err != nil {
-	//		return err
-	//	}
-	//	systemDao.Update(model.SYSTEM_PARAMETER_FOR_LOCATIONS_BUILT, "1")
-	//}
+	if !systemDao.LocationsBuilt() {
+		sqlStr, err := common.ReadFileToString("toolkit/sql/locations.sql")
+		if err != nil {
+			return err
+		}
+		_, err = common.GetDB().Exec(sqlStr)
+		if err != nil {
+			return err
+		}
+		systemDao.Update(model.SYSTEM_PARAMETER_FOR_LOCATIONS_BUILT, "1")
+	}
 
 	//运营参数建立
 	operationsBuild()
