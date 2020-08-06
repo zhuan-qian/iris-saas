@@ -2,8 +2,8 @@ package dao
 
 import (
 	"fmt"
-	"gold_hill/mine/model"
-	"gold_hill/mine/service/cache"
+	"zhuan-qian/go-saas/model"
+	"zhuan-qian/go-saas/service/cache"
 	"strings"
 	"time"
 	"xorm.io/xorm"

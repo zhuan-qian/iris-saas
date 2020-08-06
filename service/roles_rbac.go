@@ -1,9 +1,9 @@
 package service
 
 import (
-	"gold_hill/mine/common"
-	"gold_hill/mine/dao"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/dao"
+	"zhuan-qian/go-saas/model"
 	"strconv"
 	"strings"
 )

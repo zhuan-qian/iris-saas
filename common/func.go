@@ -12,7 +12,7 @@ import (
 	"math/rand"
 	"mime/multipart"
 	"os"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/model"
 	"reflect"
 	"strconv"
 	"strings"

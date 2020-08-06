@@ -2,7 +2,7 @@ package log
 
 import (
 	"github.com/sirupsen/logrus"
-	"gold_hill/mine/service/log/hook"
+	"zhuan-qian/go-saas/service/log/hook"
 	"sync"
 )
 

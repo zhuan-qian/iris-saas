@@ -3,10 +3,10 @@ package admins
 import (
 	"github.com/dgrijalva/jwt-go"
 	"os"
-	"gold_hill/mine/app/controllers"
-	"gold_hill/mine/common"
-	"gold_hill/mine/model"
-	"gold_hill/mine/service"
+	"zhuan-qian/go-saas/app/controllers"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/model"
+	"zhuan-qian/go-saas/service"
 	"strings"
 )
 

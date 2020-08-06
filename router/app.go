@@ -4,8 +4,8 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
-	"gold_hill/mine/app/controllers/client"
-	"gold_hill/mine/app/middleware"
+	"zhuan-qian/go-saas/app/controllers/client"
+	"zhuan-qian/go-saas/app/middleware"
 )
 
 func AppRouter(app *iris.Application) {

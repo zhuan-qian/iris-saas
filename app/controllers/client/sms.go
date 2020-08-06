@@ -1,8 +1,8 @@
 package client
 
 import (
-	"gold_hill/mine/app/controllers"
-	"gold_hill/mine/service/sms"
+	"zhuan-qian/go-saas/app/controllers"
+	"zhuan-qian/go-saas/service/sms"
 )
 
 type Sms struct {

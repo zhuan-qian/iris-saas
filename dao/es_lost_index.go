@@ -2,7 +2,7 @@ package dao
 
 import (
 	"fmt"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/model"
 	"strings"
 	"xorm.io/xorm"
 )

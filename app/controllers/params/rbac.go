@@ -1,6 +1,6 @@
 package params
 
-import "gold_hill/mine/model"
+import "zhuan-qian/go-saas/model"
 
 type RbacGet struct {
 	MenuPath *string `json:"menuPath" validate:"omitempty,len=8"`

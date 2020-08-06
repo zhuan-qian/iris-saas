@@ -2,8 +2,8 @@ package dao
 
 import (
 	"golang.org/x/crypto/bcrypt"
-	"gold_hill/mine/common"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/model"
 	"strconv"
 	"xorm.io/builder"
 	"xorm.io/xorm"

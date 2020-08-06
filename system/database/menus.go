@@ -1,8 +1,8 @@
 package database
 
 import (
-	"gold_hill/mine/dao"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/dao"
+	"zhuan-qian/go-saas/model"
 	"strings"
 )
 

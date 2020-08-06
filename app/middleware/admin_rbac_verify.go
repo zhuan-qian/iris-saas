@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/kataras/iris/v12"
 	"net/http"
-	"gold_hill/mine/dao"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/dao"
+	"zhuan-qian/go-saas/model"
 )
 
 func AdminRbacVerify(c iris.Context) {

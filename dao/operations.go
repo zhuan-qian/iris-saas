@@ -1,7 +1,7 @@
 package dao
 
 import (
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/model"
 	"xorm.io/xorm"
 )
 

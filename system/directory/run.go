@@ -2,7 +2,7 @@ package directory
 
 import (
 	"os"
-	"gold_hill/mine/common"
+	"zhuan-qian/go-saas/common"
 )
 
 func InitDirectory ()error{

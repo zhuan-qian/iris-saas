@@ -5,8 +5,8 @@ import (
 	"errors"
 	"github.com/denverdino/aliyungo/sms"
 	"os"
-	"gold_hill/mine/common"
-	"gold_hill/mine/service/cache"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/service/cache"
 	"strconv"
 	"time"
 )

@@ -1,8 +1,8 @@
 package admins
 
 import (
-	"gold_hill/mine/app/controllers"
-	"gold_hill/mine/service"
+	"zhuan-qian/go-saas/app/controllers"
+	"zhuan-qian/go-saas/service"
 )
 
 type Attachments struct {

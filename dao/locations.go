@@ -2,7 +2,7 @@ package dao
 
 import (
 	"errors"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/model"
 	"sort"
 	"strings"
 	"xorm.io/builder"

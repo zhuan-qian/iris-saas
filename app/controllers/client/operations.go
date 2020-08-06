@@ -1,8 +1,8 @@
 package client
 
 import (
-	"gold_hill/mine/app/controllers"
-	"gold_hill/mine/dao"
+	"zhuan-qian/go-saas/app/controllers"
+	"zhuan-qian/go-saas/dao"
 )
 
 type Operations struct {

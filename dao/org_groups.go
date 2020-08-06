@@ -1,8 +1,8 @@
 package dao
 
 import (
-	"gold_hill/mine/model"
-	"gold_hill/mine/model/mashup"
+	"zhuan-qian/go-saas/model"
+	"zhuan-qian/go-saas/model/mashup"
 	"xorm.io/builder"
 	"xorm.io/xorm"
 )

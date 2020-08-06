@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 	"io/ioutil"
-	"gold_hill/mine/common"
-	"gold_hill/mine/service/es"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/service/es"
 	"strings"
 )
 

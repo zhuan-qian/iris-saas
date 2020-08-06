@@ -8,8 +8,8 @@ import (
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
 	sms "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms/v20190711" //引入sms
 	"os"
-	"gold_hill/mine/common"
-	"gold_hill/mine/service/cache"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/service/cache"
 	"strconv"
 	"time"
 )

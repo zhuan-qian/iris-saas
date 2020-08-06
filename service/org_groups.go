@@ -1,11 +1,11 @@
 package service
 
 import (
-	"gold_hill/mine/app/controllers/params"
-	"gold_hill/mine/common"
-	"gold_hill/mine/dao"
-	"gold_hill/mine/model"
-	"gold_hill/mine/model/mashup"
+	"zhuan-qian/go-saas/app/controllers/params"
+	"zhuan-qian/go-saas/common"
+	"zhuan-qian/go-saas/dao"
+	"zhuan-qian/go-saas/model"
+	"zhuan-qian/go-saas/model/mashup"
 )
 
 type orgGroups struct {

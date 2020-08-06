@@ -1,9 +1,9 @@
 package service
 
 import (
-	"gold_hill/mine/app/controllers/params"
-	"gold_hill/mine/dao"
-	"gold_hill/mine/model"
+	"zhuan-qian/go-saas/app/controllers/params"
+	"zhuan-qian/go-saas/dao"
+	"zhuan-qian/go-saas/model"
 )
 
 type Operations struct {

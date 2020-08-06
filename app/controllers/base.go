@@ -5,7 +5,7 @@ import (
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/sessions"
 	"net/http"
-	"gold_hill/mine/common"
+	"zhuan-qian/go-saas/common"
 )
 
 type Base struct {

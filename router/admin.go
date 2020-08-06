@@ -4,8 +4,8 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/mvc"
-	"gold_hill/mine/app/controllers/admins"
-	"gold_hill/mine/app/middleware"
+	"zhuan-qian/go-saas/app/controllers/admins"
+	"zhuan-qian/go-saas/app/middleware"
 )
 
 func AdminRouter(app *iris.Application) {

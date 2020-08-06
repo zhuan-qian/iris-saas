@@ -1,4 +1,4 @@
-module gold_hill/mine
+module zhuan-qian/go-saas
 
 go 1.14
 
