@@ -7,14 +7,6 @@ import (
 	"xorm.io/xorm"
 )
 
-type BaseDao interface {
-	NewSession()
-	Write(session *xorm.Session)
-	Read() *xorm.Session
-	Insert(bean interface{}) (int64, error)
-	InsertMulti(rows interface{}) (int64, error)
-}
-
 type Base struct {
 	session *xorm.Session
 }
